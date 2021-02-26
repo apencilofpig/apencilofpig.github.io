@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://apencilofpig.github.io</id>
     <title>Ideal_pig</title>
-    <updated>2021-02-25T07:59:34.494Z</updated>
+    <updated>2021-02-26T15:27:24.900Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://apencilofpig.github.io"/>
     <link rel="self" href="https://apencilofpig.github.io/atom.xml"/>
@@ -11,19 +11,16 @@
     <icon>https://apencilofpig.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Ideal_pig</rights>
     <entry>
-        <title type="html"><![CDATA[hello-world]]></title>
-        <id>https://apencilofpig.github.io/post/hello-world/</id>
-        <link href="https://apencilofpig.github.io/post/hello-world/">
+        <title type="html"><![CDATA[来小站的第一篇博客]]></title>
+        <id>https://apencilofpig.github.io/post/lai-xiao-zhan-de-di-yi-pian-bo-ke/</id>
+        <link href="https://apencilofpig.github.io/post/lai-xiao-zhan-de-di-yi-pian-bo-ke/">
         </link>
-        <updated>2021-02-23T15:58:46.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="这是一个c语言的hello-world">这是一个C语言的“Hello world”</h1>
-<pre><code class="language-c++">#include&lt;iostream&gt;  
-using namespace std;  
-int main()  
-{  
-       cout&lt;&lt;&quot;Hello world&quot;;  
-}
-</code></pre>
+        <updated>2021-02-26T14:06:23.000Z</updated>
+        <content type="html"><![CDATA[<p>    第一次写博客，其实挺不熟练的，虽然语法看起来简单，但真到写的时候就不知道该用哪个了，写着写着发现自己一直在敲字，<s>为了展现我的确学了点东西，我加了个删除线。</s></p>
+<p>    不说废话了，说说俺弄这个博客的想法吧。本来这个网站是想把咱们俩的日志都保存到这里，而且这个网站是能自己编辑的，到时候我学会咋弄这个网站就可以想进自己家一样来翻看了，里面的内容也丢不了，比较好找到。不过看你好像没啥兴趣的，先暂且把我的放上去吧。<s>当然俺也没有别的意思</s></p>
+<p>    一到过年过节的客人就多，总是没空陪你多聊聊天。其实客人啥的看起来跟我没啥关系，我也不想去陪，但也是没办法的事，毕竟这是在我妈家，等有了自己家，就一切都好了。</p>
+<p>    有时候找不到话题聊了想跟你玩会别的，不是说跟你没啥聊的了，就是想换个方式跟你增进感情，一块看剧也是一种方式，不过我感觉你觉得这种方式像是在敷衍你之类的，我感觉吧，适当的换换交流的方式，能让咱们俩都不会太腻。只是这种方法需要咱俩一块去适应，我感觉这样适应了的话，应该不会让咱俩都太无聊了。</p>
+<p>    打算明天出一个<strong>故事</strong>之类的吧，今天时间比较紧张，随便说上了两句，知道这些东西你也不感兴趣，明天上干货，希望媳妇开心。</p>
 ]]></content>
     </entry>
 </feed>
