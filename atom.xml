@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://apencilofpig.github.io</id>
     <title>Ideal_pig</title>
-    <updated>2021-02-28T02:50:26.846Z</updated>
+    <updated>2021-03-16T11:12:23.173Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://apencilofpig.github.io"/>
     <link rel="self" href="https://apencilofpig.github.io/atom.xml"/>
@@ -10,6 +10,39 @@
     <logo>https://apencilofpig.github.io/images/avatar.png</logo>
     <icon>https://apencilofpig.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Ideal_pig</rights>
+    <entry>
+        <title type="html"><![CDATA[分治法之二分查找]]></title>
+        <id>https://apencilofpig.github.io/post/fen-zhi-fa-zhi-er-fen-cha-zhao/</id>
+        <link href="https://apencilofpig.github.io/post/fen-zhi-fa-zhi-er-fen-cha-zhao/">
+        </link>
+        <updated>2021-03-16T11:08:09.000Z</updated>
+        <content type="html"><![CDATA[<p>利用分治法进行二分查找</p>
+<hr>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+int n,a[20];
+int binsearch(int start, int end,int x)
+{
+	int cur = (start + end) / 2;//cur为当前与x进行比较的值的位置
+	if (a[cur] == x)	return cur;//找到了就直接返回
+	else if (a[cur] &gt; x)	return binsearch(start, cur, x);//往左找
+	else
+	{
+		if (start == cur)	return -1;//此时说明找到最后也没有找到，返回-1
+		return binsearch(cur+1, end, x);//往右找
+	}
+}
+int main()
+{
+	cin &gt;&gt; n;
+	for (int i = 0; i &lt; n; i++)	cin &gt;&gt; a[i];
+	int x;
+	cin &gt;&gt; x;
+	cout &lt;&lt; binsearch(0, n, x);
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[王国的新画师（1）]]></title>
         <id>https://apencilofpig.github.io/post/wang-guo-de-xin-hua-shi/</id>

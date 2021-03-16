@@ -151,55 +151,68 @@
         <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
             <figure class="animate-box">
                 
-                    <img src="https://apencilofpig.github.io/post-images/hello-gridea.png" alt="Hello Gridea" class="img-responsive">
+                    <img src="https://apencilofpig.github.io/post-images/fen-zhi-fa-zhi-er-fen-cha-zhao.png" alt="分治法之二分查找" class="img-responsive">
                 
             </figure>
             <span class="fh5co-meta animate-box">
                 
                     <div class="tag-container">
                         
-                            <a href="https://apencilofpig.github.io/tag/9v7M8ncmB/" class="tag">Gridea, </a>
+                            <a href="https://apencilofpig.github.io/tag/48VUJ26W7/" class="tag">ACM, </a>
                         
                     </div>
                 
             </span>
-            <h2 class="fh5co-article-title animate-box">Hello Gridea</h2>
+            <h2 class="fh5co-article-title animate-box">分治法之二分查找</h2>
             <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
-                <li>2018-12-12</li>
-                <li>298字</li>
-                <li>2 min read</li>
+                <li>2021-03-16</li>
+                <li>140字</li>
+                <li>1 min read</li>
             </ol>
 
             <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
                 <div class="row">
                     <div class="col-md-12 animate-box post-content">
-                        <p> <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+                        <p> <p>利用分治法进行二分查找</p>
+<hr>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+int n,a[20];
+int binsearch(int start, int end,int x)
+{
+	int cur = (start + end) / 2;//cur为当前与x进行比较的值的位置
+	if (a[cur] == x)	return cur;//找到了就直接返回
+	else if (a[cur] &gt; x)	return binsearch(start, cur, x);//往左找
+	else
+	{
+		if (start == cur)	return -1;//此时说明找到最后也没有找到，返回-1
+		return binsearch(cur+1, end, x);//往右找
+	}
+}
+int main()
+{
+	cin &gt;&gt; n;
+	for (int i = 0; i &lt; n; i++)	cin &gt;&gt; a[i];
+	int x;
+	cin &gt;&gt; x;
+	cout &lt;&lt; binsearch(0, n, x);
+}
+</code></pre>
  </p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12 animate-box">
+                        
+                            <div class="next-post">
+                                <div class="next">下一篇</div>
+                                <a href="https://apencilofpig.github.io/post/wang-guo-de-xin-hua-shi/">
+                                    <h3 class="post-title">
+                                        王国的新画师（1）
+                                    </h3>
+                                </a>
+                            </div>
                         
                     </div>
                 </div>
@@ -221,23 +234,11 @@
     <!-- 返回顶部 -->
     <div class="back-to-top">
     
-        <a href="#!" id="tool-toc" class="hidden-xs hidden-sm">
-            <i class="fa fa-map"></i>
-        </a>
-        <br>
-    
     <a href="#top" class="hidden-xs hidden-sm"><i class="fa fa-paper-plane"></i></a>
 </div>
 
 <div class="post-toc animated fadeInRight hidden-xs hidden-sm" style="display: none;">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
-</ul>
-</li>
-</ul>
-
+    
 </div>
 
 
