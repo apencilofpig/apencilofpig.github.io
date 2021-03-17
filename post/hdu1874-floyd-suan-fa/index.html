@@ -35,7 +35,7 @@
 
 </head>
 <body>
-<div id="fh5co-offcanvas">
+    <div id="fh5co-offcanvas">
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
     </a>
@@ -141,118 +141,136 @@
 </header>
 
 
-<div class="container-fluid">
-    <div class="row fh5co-post-entry single-entry">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0 animate-box">
+    <!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
+    <!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
 
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-12 col-xs-offset-0 text-center content-article">
+    <!-- 等gridea出自定义页面功能再优化一下 -->
+    
+        <div class="container-fluid">
+    <div class="row fh5co-post-entry single-entry">
+        <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+            <figure class="animate-box">
+                
+                    <img src="https://tva3.sinaimg.cn/large/9bd9b167gy1fwrsxs6h2qj21hc0u0qbd.jpg" alt="HDU1874——Floyd算法" class="img-responsive">
+                
+            </figure>
+            <span class="fh5co-meta animate-box">
+                
+                    <div class="tag-container">
+                        
+                            <a href="https://apencilofpig.github.io/tag/48VUJ26W7/" class="tag">ACM, </a>
+                        
+                    </div>
+                
+            </span>
+            <h2 class="fh5co-article-title animate-box">HDU1874——Floyd算法</h2>
+            <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
+                <li>2021-03-17</li>
+                <li>245字</li>
+                <li>2 min read</li>
+            </ol>
+
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                <div class="row">
+                    <div class="col-md-12 animate-box post-content">
+                        <p> <p>题目：<a href="https://vjudge.net/problem/HDU-1874">https://vjudge.net/problem/HDU-1874</a></p>
+<hr>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+int main()
+{
+	int n, m, a, b, x, y, field[205][205], s, t;
+	while (scanf(&quot;%d%d&quot;, &amp;n, &amp;m) !=EOF)
+	{
+		for(int i=0;i&lt;n;i++)
+		{
+			for(int j=0;j&lt;n;j++)
+			{
+				if(i==j)	field[i][j]=0;//注意同一个点到同一个点的距离是0
+				else	field[i][j]=INF;
+			}
+		}
+		for (int i = 0; i &lt; m; i++)
+		{
+			cin &gt;&gt; a &gt;&gt; b &gt;&gt; x;
+			if(field[a][b]&gt;x)	field[a][b] = field[b][a]=x;//可能不止一条路，存在两个地点有多条路的情况
+		}
+		cin &gt;&gt; s &gt;&gt; t;
+		for (int i = 0; i &lt; n; i++)//最外层循环是遍历所有中介点
+		{
+			for (int j = 0; j &lt; n; j++)
+			{
+				for (int k = 0; k &lt; n; k++)
+				{
+					if (field[j][k] &gt; field[j][i] + field[i][k])//判断经过中介点是否省距离
+					{
+						field[j][k] = field[j][i] + field[i][k];
+					}
+				}
+			}
+		}
+		if (field[s][t] == INF)	cout &lt;&lt; -1 &lt;&lt; endl;
+		else
+		{
+			cout &lt;&lt; field[s][t] &lt;&lt; endl;
+		}
+	}
+}
+</code></pre>
+ </p>
+                    </div>
+                </div>
 
                 <div class="row">
-
-                    
-                    <h2 class="text-center archives-title">
-                        <i class="fa fa-archive"></i> 文章归档
-                    </h2>
-
-                    
-                    <div class="row post-group">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-center post-year tag-title">
-                            <h3>2021</h3>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-left">
-                            <ul class="post-list">
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://apencilofpig.github.io/post/hdu1874-floyd-suan-fa/" target="_blank">
-                                        <span class="post-title">HDU1874——Floyd算法</span>
-                                        <span class="post-day">2021-03-17</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://apencilofpig.github.io/post/fen-zhi-fa-zhi-er-fen-cha-zhao/" target="_blank">
-                                        <span class="post-title">分治法之二分查找</span>
-                                        <span class="post-day">2021-03-16</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://apencilofpig.github.io/post/wang-guo-de-xin-hua-shi/" target="_blank">
-                                        <span class="post-title">王国的新画师（1）</span>
-                                        <span class="post-day">2021-02-27</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://apencilofpig.github.io/post/lai-xiao-zhan-de-di-yi-pian-bo-ke/" target="_blank">
-                                        <span class="post-title">来小站的第一篇博客</span>
-                                        <span class="post-day">2021-02-26</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://apencilofpig.github.io/post/2021-02-25/" target="_blank">
-                                        <span class="post-title">2021-02-25</span>
-                                        <span class="post-day">2021-02-25</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://apencilofpig.github.io/post/xiao-ben-ben-ji-xia-lai/" target="_blank">
-                                        <span class="post-title">小本本记下来</span>
-                                        <span class="post-day">2021-02-23</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://apencilofpig.github.io/post/sui-kou-yi-shuo/" target="_blank">
-                                        <span class="post-title">随口一说</span>
-                                        <span class="post-day">2021-02-21</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://apencilofpig.github.io/post/dui-bu-qi-wo-chu-gui-liao-guo-qu-de-ni/" target="_blank">
-                                        <span class="post-title">对不起，我出轨了过去的你</span>
-                                        <span class="post-day">2021-02-20</span>
-                                    </a>
-                                </li>
-                                
-                            
-                            </ul>
-                        </div>
+                    <div class="col-md-12 animate-box">
+                        
+                            <div class="next-post">
+                                <div class="next">下一篇</div>
+                                <a href="https://apencilofpig.github.io/post/fen-zhi-fa-zhi-er-fen-cha-zhao/">
+                                    <h3 class="post-title">
+                                        分治法之二分查找
+                                    </h3>
+                                </a>
+                            </div>
+                        
                     </div>
-                    
-
                 </div>
-            </div>
-        </div>
+
+                <div class="row">
+    <div class="col-md-12 animate-box">
+        
     </div>
 </div>
 
+            </div>
 
+        </article>
+    </div>
+</div>
+
+    
+
+    <!-- 返回顶部 -->
+    <div class="back-to-top">
+    
+    <a href="#top" class="hidden-xs hidden-sm"><i class="fa fa-paper-plane"></i></a>
+</div>
+
+<div class="post-toc animated fadeInRight hidden-xs hidden-sm" style="display: none;">
+    
+</div>
+
+
+    
 <footer id="fh5co-footer">
   <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
 </footer>
 
 
-<!-- jQuery -->
+    <!-- jQuery -->
 <script src="https://apencilofpig.github.io/media/scripts/jquery.min.js"></script>
 <!-- img lazy load -->
 <script src="https://apencilofpig.github.io/media/scripts/jquery.lazyload.min.js"></script>
