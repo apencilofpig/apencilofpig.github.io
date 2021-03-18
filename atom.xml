@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://apencilofpig.github.io</id>
     <title>Ideal_pig</title>
-    <updated>2021-03-17T13:52:17.453Z</updated>
+    <updated>2021-03-18T01:29:47.722Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://apencilofpig.github.io"/>
     <link rel="self" href="https://apencilofpig.github.io/atom.xml"/>
@@ -10,6 +10,68 @@
     <logo>https://apencilofpig.github.io/images/avatar.png</logo>
     <icon>https://apencilofpig.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Ideal_pig</rights>
+    <entry>
+        <title type="html"><![CDATA[POJ3660——Floyd算法]]></title>
+        <id>https://apencilofpig.github.io/post/poj3660-floyd-suan-fa/</id>
+        <link href="https://apencilofpig.github.io/post/poj3660-floyd-suan-fa/">
+        </link>
+        <updated>2021-03-18T01:20:49.000Z</updated>
+        <content type="html"><![CDATA[<p>Floyd算法的另一个用途，与传递闭包联系起来，当当这个点的入度和出度之和为n-1时，这个点的位置一定就确定了，因此只需要用Floyd算法计算出各个点之间的可达关系即可。</p>
+<hr>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+int main()
+{
+	int n, m, field[105][105];
+	cin &gt;&gt; n &gt;&gt; m;
+	for (int i = 1; i &lt;= n; i++)
+	{
+		for (int j = 1; j &lt;= n; j++)
+		{
+			if (i == j)	field[i][j] = 0;
+			else
+			{
+				field[i][j] = INF;
+			}
+		}
+	}
+	for (int i = 1; i &lt;= m; i++)
+	{
+		int a, b;
+		cin &gt;&gt; a &gt;&gt; b;
+		field[a][b] = 1;
+	}
+	for (int i = 1; i &lt;= n; i++)
+	{
+		for (int j = 1; j &lt;= n; j++)
+		{
+			for (int k = 1; k &lt;= n; k++)
+			{
+				if (field[j][k] &gt; field[j][i] + field[i][k])
+				{
+					field[j][k] = field[j][i] + field[i][k];
+				}
+			}
+		}
+	}
+    //在此之前是Floyd算法
+	int num = 0;
+	for (int i = 1; i &lt;= n; i++)
+	{
+		int x=0, y=0;
+		for (int j = 1; j &lt;= n; j++)
+		{//计算各点之间是否可达
+			if (field[i][j] &amp;&amp; field[i][j] != INF)	x++;
+			if (field[j][i] &amp;&amp; field[j][i] != INF)	y++;
+		}
+		if (x + y == n - 1)	num++;
+	}
+	cout &lt;&lt; num;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[HDU1874——Floyd算法]]></title>
         <id>https://apencilofpig.github.io/post/hdu1874-floyd-suan-fa/</id>
